@@ -82,3 +82,29 @@ body{
 .search-btn:hover{
     background: wheat;
 }
+.meal-result{
+    margin-top: 4rem;
+}
+#meal{
+    margin: 2.4rem;
+}
+.meal-item{
+    border-radius:1rem;
+    -webkit-border-radius:1rem;
+    -moz-border-radius:1rem;
+    -ms-border-radius:1rem;
+    -o-border-radius:1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px black;
+    margin: 2rem 0;
+    }
+    .meal-img img{
+        width: 100%;
+        display: block;
+    }
+    .meal-name{
+        padding:1.5rem 0.5rem;
+    }
+    .meal-name h3{
+        font-size: 1.4rem;
+    }
