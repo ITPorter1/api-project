@@ -1,6 +1,6 @@
 const searchBtn = document.getElementById('search-btn');
-const mealList = document.getElementById('meal');
-const mealDetailsContent = document.querySelector('.meal-details-content');
+const mealList = document.getElementById('album');
+const mealDetailsContent = document.querySelector('.album-details-content');
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
 // event listeners
@@ -21,11 +21,11 @@ function getMealList(){
         if(data.meals){
             data.meals.forEach(meal => {
                 html += `
-                    <div class = "meal-item" data-id = "${meal.idMeal}">
-                        <div class = "meal-img">
+                    <div class = "album-item" data-id = "${meal.idMeal}">
+                        <div class = "album-img">
                             <img src = "${meal.strMealThumb}" alt = "food">
                         </div>
-                        <div class = "meal-name">
+                        <div class = "album-name">
                             <h3>${meal.strMeal}</h3>
                             <a href = "#" class = "recipe-btn">Get Recipe</a>
                         </div>
@@ -34,7 +34,7 @@ function getMealList(){
             });
             mealList.classList.remove('notFound');
         } else{
-            html = "Sorry, we didn't find any meal!";
+            html = "ARTIST NOT FOUND";
             mealList.classList.add('notFound');
         }
 
@@ -59,8 +59,8 @@ function mealRecipeModal(meal){
     console.log(meal);
     meal = meal[0];
     let html = `
-        <h2 class = "recipe-title">${meal.strMeal}</h2>
-        <p class = "recipe-category">${meal.strCategory}</p>
+        <h2 class = "album-title">${meal.strMeal}</h2>
+        <p class = "music-genre">${meal.strCategory}</p>
         <div class = "recipe-instruct">
             <h3>Instructions:</h3>
             <p>${meal.strInstructions}</p>

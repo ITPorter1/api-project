@@ -12,7 +12,7 @@ body{
 
 /*  */
 .btn{
-    font-family: inherit;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
     outline: 0;
     font: size 1.05rem;
@@ -21,7 +21,7 @@ body{
     opacity: 0.8;
 }
 .title{
-    font-size: 2rem;
+    font-size: 3.5rem;
     margin-bottom: 1rem;
 }
 
@@ -29,20 +29,20 @@ body{
 .container{
     min-height: 100vh;
 }
-.meal-wrapper{
-    max-width: 1280px;
+.album-wrapper{
+    max-width: 1300px;
     margin: 0 auto;
     padding: 2rem;
-    background-color: aliceblue;
+    background-color: tan;
     text-align: center;
 }
-.meal-search{
+.artist-search{
     margin: 2rem 0;
 }
-.meal-search cite{
+.artist-search cite{
     font-size: 1rem;
 }
-.meal-search-box{
+.artist-search-box{
     margin: 1.2rem 0;
     display: flex;
     align-items: stretch;
@@ -56,8 +56,8 @@ body{
     font-size: 1.1rem;
     font-family: inherit;
     outline: 0;
-    border: 1px solid wheat;
-    color: wheat;
+    border: 1px solid black;
+    color: black;
     border-top-left-radius: 2rem;
     border-bottom-left-radius: 2rem;
 }
@@ -70,7 +70,7 @@ body{
     font-size: 1.8rem;
     background: wheat;
     color: black;
-    border: none;
+    border: 1px solid black;
     border-top-right-radius: 2rem;
     border-bottom-right-radius: 2rem;
     transition: all 0.4s linear;
@@ -80,15 +80,15 @@ body{
     -o-transition: all 0.4s linear;
 }
 .search-btn:hover{
-    background: wheat;
+    background: crimson;
 }
-.meal-result{
+.album-result{
     margin-top: 4rem;
 }
-#meal{
+#album{
     margin: 2.4rem;
 }
-.meal-item{
+.album-item{
     border-radius:1rem;
     -webkit-border-radius:1rem;
     -moz-border-radius:1rem;
@@ -98,25 +98,26 @@ body{
     box-shadow: 0 4px 21px -12px black;
     margin: 2rem 0;
     }
-    .meal-img img{
+    .album-img img{
         width: 100%;
         display: block;
     }
-    .meal-name{
+    .album-name{
         padding:1.5rem 0.5rem;
     }
-    .meal-name h3{
+    .album-name h3{
         font-size: 1.4rem;
     }
     .recipe-btn{
         text-decoration: none;
-        color: white;
-        background: wheat;
+        color: wheat;
+        background: black;
         font-weight: 500;
         font-size: 1.1rem;
         padding: 0.75rem 0;
         display: block;
         width: 175px;
+        margin-left: 25%;
         border-radius: 2rem;
         -webkit-border-radius:2rem;
         -moz-border-radius:2rem;
@@ -129,11 +130,11 @@ body{
         -o-transition: all 0.4s linear;
     }
     .recipe-btn:hover{
-        background: wheat;
+        background: crimson;
     }
 
     /* meal details */
-    .meal-details{
+    .album-details{
         position: fixed;
         top: 50%;
         left: 50%;
@@ -142,23 +143,23 @@ body{
         -moz-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
         -o-transform: translate(-50%, -50%);
-        color: white;
-        background: black;
+        color: black;
+        background: gray;
         border-radius: 1rem;
         -webkit-border-radius:1rem;
         -moz-border-radius:1rem;
         -o-border-radius:1rem;
-        width: 90%;
+        width: 70%;
         height: 90%;
         overflow-y: scroll;
         display: none;
         padding: 2rem 0;
     }
-    .meal-details::-webkit-scrollbar{
+    .album-details::-webkit-scrollbar{
         width: 10px;
     }
-    .meal-details::-webkit-scrollbar-thumb{
-        background: white;
+    .album-details::-webkit-scrollbar-thumb{
+        background: crimson;
         border-radius: 2rem;
         -webkit-border-radius: 2rem;
         -moz-border-radius: 2rem;
@@ -171,10 +172,10 @@ body{
         display: block;
     }
 
-    .meal-details-content{
+    .album-details-content{
         margin: 2rem;
     }
-    .meal-details-content p:not(.recipe-category){
+    .album-details-content p:not(.recipe-category){
         padding: 1rem 0;
     }
     .recipe-close-btn{
@@ -182,7 +183,7 @@ body{
         right: 2rem;
         top: 2rem;
         font-size: 1.8rem;
-        background: white;
+        background: crimson;
         border: none;
         width: 35px;
         height: 35px;
@@ -196,14 +197,14 @@ body{
         justify-content: center;
         opacity: 0.9;
     }
-    .recipe-title{
+    .album-title{
         letter-spacing: 1px;
         padding-bottom: 1rem;
     }
-    .recipe-category{
-        background: #fff;
+    .music-genre{
+        background: black;
         font-weight: 600;
-        color: wheat;
+        color: crimson;
         display: inline-block;
         padding: 0.2rem 0.5rem;
         border-radius: 0.3rem;
@@ -212,17 +213,17 @@ body{
         -ms-border-radius: 0.3rem;
         -o-border-radius: 0.3rem;
     }
-    .recipe-category{
-        background: #fff;
+    .music-genre{ 
+        background: black;
         font-weight: 600;
-        color: wheat;
+        color: crimson;
         display: inline-block;
         padding: 0.2rem 0.5rem;
         border-radius: 0.3rem;
         -webkit-border-radius: 0.3rem;
         -moz-border-radius: 0.3rem;
         -ms-border-radius: 0.3rem;
-        -o-border-radius: 0.3rem;
+        -o-border-radius: 0.3rem; 
     }
     .recipe-instruct{
         padding: 1rem 0;
@@ -242,7 +243,7 @@ body{
         margin: 1.4rem 0;
     }
     .recipe-link a{
-        color: #fff;
+        color: black;
         font-size: 1.2rem;
         font-weight: 700;
         transition: all 0.4s linear;
@@ -259,7 +260,7 @@ body{
     /*  */
     .notFound{
         grid-template-columns: 1fr!important;
-        color: var(--tenne-tawny);
+        color: crimson;
         font-size: 1.8rem;
         font-weight: 600;
         width: 100%;
@@ -267,7 +268,7 @@ body{
     
     /* Media Queries */
     @media screen and (min-width: 600px) {
-        .meal-search-box{
+        .artist-search-box{
             width: 540px;
             margin-left: auto;
             margin-right: auto;
@@ -275,18 +276,18 @@ body{
     }
 
     @media screen and (min-width: 768px) {
-        #meal{
+        #album{
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 2rem;
         }
-        .meal-item{
+        .album-item{
             margin: 0;
         }
     }
 
     @media screen and (min-width: 992px){
-        #meal{
+        #album{
             grid-template-columns:repeat(3, 1fr);
         }
     }
