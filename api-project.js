@@ -1,10 +1,10 @@
 const searchBtn = document.getElementById('search-btn');
-const mealList = document.getElementById('album');
+const collectionId = document.getElementById('album');
 const mealDetailsContent = document.querySelector('.album-details-content');
 const recipeCloseBtn = document.getElementById('recipe-close-btn');
 
 // event listeners
-searchBtn.addEventListener('click', getMealList);
+ searchBtn.addEventListener('click', getMealList);
 mealList.addEventListener('click', getMealRecipe);
 recipeCloseBtn.addEventListener('click', () => {
     mealDetailsContent.parentElement.classList.remove('showRecipe');
@@ -14,64 +14,64 @@ recipeCloseBtn.addEventListener('click', () => {
 // get meal list that matches with the ingredients
 function getMealList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?i=${searchInputTxt}`)
+    fetch(`https://itunes.apple.com/search?term=kendrick+lamar&entity=album`)
     .then(response => response.json())
     .then(data => {
         let html = "";
-        if(data.meals){
-            data.meals.forEach(meal => {
+        if(data.results){
+            data.results.forEach(album => {
                 html += `
-                    <div class = "album-item" data-id = "${meal.idMeal}">
-                        <div class = "album-img">
-                            <img src = "${meal.strMealThumb}" alt = "food">
+                    <div class = "album-item" data-id = "${album.collectionId}">
+                        <div class = "album-img"> 
+                            <img src = "${album.artworkUrl100}" alt = "food">
                         </div>
                         <div class = "album-name">
-                            <h3>${meal.strMeal}</h3>
+                            <h3>${album.collectionName}</h3>
                             <a href = "#" class = "recipe-btn">Get Recipe</a>
                         </div>
                     </div>
                 `;
             });
-            mealList.classList.remove('notFound');
+            collectionId.classList.remove('notFound');
         } else{
             html = "ARTIST NOT FOUND";
-            mealList.classList.add('notFound');
+            collectionId.classList.add('notFound');
         }
 
-        mealList.innerHTML = html;
+        collectionId.innerHTML = html;
     });
 }
 
 
 // get recipe of the meal
-function getMealRecipe(e){
-    e.preventDefault();
-    if(e.target.classList.contains('recipe-btn')){
-        let mealItem = e.target.parentElement.parentElement;
-        fetch(`https://www.themealdb.com/api/json/v1/1/lookup.php?i=${mealItem.dataset.id}`)
-        .then(response => response.json())
-        .then(data => mealRecipeModal(data.meals));
-    }
-}
+// function getMealRecipe(e){
+//     e.preventDefault();
+//     if(e.target.classList.contains('recipe-btn')){
+//         let collectionId = e.target.parentElement.parentElement;
+//         fetch(`https://itunes.apple.com/lookup?upc=${collectionId.dataset.id}`)
+//         .then(response => response.json())
+//         .then(data => mealRecipeModal(data.results));
+//     }
+// }
 
-// create a modal
-function mealRecipeModal(meal){
-    console.log(meal);
-    meal = meal[0];
-    let html = `
-        <h2 class = "album-title">${meal.strMeal}</h2>
-        <p class = "music-genre">${meal.strCategory}</p>
-        <div class = "recipe-instruct">
-            <h3>Instructions:</h3>
-            <p>${meal.strInstructions}</p>
-        </div>
-        <div class = "recipe-meal-img">
-            <img src = "${meal.strMealThumb}" alt = "">
-        </div>
-        <div class = "recipe-link">
-            <a href = "${meal.strYoutube}" target = "_blank">Watch Video</a>
-        </div>
-    `;
-    mealDetailsContent.innerHTML = html;
-    mealDetailsContent.parentElement.classList.add('showRecipe');
-}
+// // // create a modal
+// function mealRecipeModal(album){
+//     console.log(album);
+//     album = album[0];
+//     let html = `
+//         <h2 class = "album-title">${album.collectionName}</h2>
+//         <p class = "music-genre">${album.primaryGenreName}</p>
+//         <div class = "recipe-instruct">
+//             <h3>Instructions:</h3>
+//             <p>${album.trackCount}</p>
+//         </div>
+//         <div class = "recipe-meal-img">
+//             <img src = "${album.artworkUrl100}" alt = "">
+//         </div>
+//         <div class = "recipe-link">
+//             <a href = "${collectionViewUrl}" target = "_blank">Watch Video</a>
+//         </div>
+//     `;
+//     mealDetailsContent.innerHTML = html;
+//     mealDetailsContent.parentElement.classList.add('showRecipe');
+// }
