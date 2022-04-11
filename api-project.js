@@ -14,7 +14,7 @@ recipeCloseBtn.addEventListener('click', () => {
 // get meal list that matches with the ingredients
 function getMealList(){
     let searchInputTxt = document.getElementById('search-input').value.trim();
-    fetch(`https://itunes.apple.com/search?term=kendrick+lamar&entity=album`)
+    fetch(`https://itunes.apple.com/search?term=${searchInputTxt}&entity=album`)
     .then(response => response.json())
     .then(data => {
         let html = "";
@@ -27,7 +27,7 @@ function getMealList(){
                         </div>
                         <div class = "album-name">
                             <h3>${album.collectionName}</h3>
-                            <a href = "#" class = "recipe-btn">Get Recipe</a>
+                            <a href = "#" class = "recipe-btn">VIEW</a>
                         </div>
                     </div>
                 `;

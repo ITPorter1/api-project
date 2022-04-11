@@ -28,12 +28,13 @@ body{
 /*  */
 .container{
     min-height: 100vh;
+    background:linear-gradient(gray,tan,gray);
 }
 .album-wrapper{
     max-width: 1300px;
     margin: 0 auto;
     padding: 2rem;
-    background:linear-gradient(to right,gray,tan,gray);
+    background:inherit white;
     text-align: center;
 }
 .artist-search{
